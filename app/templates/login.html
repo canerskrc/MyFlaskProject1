@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block body_content %}
+<style>
+  /* Stil tanımları */
+  table {
+    max-width: 500px;
+    margin: auto;
+    background-color: white;
+    border-collapse: collapse;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  th {
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: left;
+    padding: 10px;
+    border: 1px solid black;
+  }
+
+  td {
+    font-size: 14px;
+    color: black;
+    padding: 10px;
+    border: 1px solid black;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+
+</style>
+//form 16 Nisan dersinde eklendi
+<form method="post" action="{{ url_for('login') }}" >
+    <table>
+        <tr>
+            <th colspan="2">GIRIS Formu</th>
+        </tr>
+
+        <tr>
+            <td><label for="email">E-posta Adresiniz/ Kullanıcı adı:</label></td>
+            <td><input type="email" id="email" name="email" required></td>
+        </tr>
+        <tr>
+            <td><label for="password">PAROLA:</label></td>
+            <td><input type="password" id="password" name="password" required></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit">GİRİŞ YAP</button>
+            </td>
+        </tr>
+    </table>
+    </form>
+<script>
+{% endblock %}
